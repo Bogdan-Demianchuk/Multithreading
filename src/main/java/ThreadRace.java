@@ -2,8 +2,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ThreadRace {
+    private static final int UNTIL = 99;
     private int counter = 0;
-    private final int UNTIL = 99;
     private FileWriter writer;
 
     public static void main(String[] args) {
