@@ -2,12 +2,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ThreadRace {
-    private int counter;
+    private int counter = 0;
     private FileWriter writer;
 
     public static void main(String[] args) {
         ThreadRace threadRace = new ThreadRace();
-        threadRace.counter = 0;
         try (FileWriter fileWriter = new FileWriter("src/main/resources/RaceResult")) {
             threadRace.writer = fileWriter;
             threadRace.moving();
