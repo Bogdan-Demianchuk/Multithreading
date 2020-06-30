@@ -3,6 +3,7 @@ import java.io.IOException;
 
 public class ThreadRace {
     private int counter = 0;
+    private final int UNTIL = 99;
     private FileWriter writer;
 
     public static void main(String[] args) {
@@ -37,7 +38,7 @@ public class ThreadRace {
     class RacerWithExThread extends Thread {
         @Override
         public void run() {
-            while (counter < 99) {
+            while (counter < UNTIL) {
                 increment();
             }
         }
@@ -47,7 +48,7 @@ public class ThreadRace {
 
         @Override
         public void run() {
-            while (counter < 99) {
+            while (counter < UNTIL) {
                 increment();
             }
         }
