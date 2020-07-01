@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ThreadRace {
-    private static final int UNTIL = 99;
+    private static final int UNTIL = 100;
     private int counter = 0;
     private FileWriter writer;
 
@@ -16,7 +16,7 @@ public class ThreadRace {
         }
     }
 
-    private synchronized void increment() {
+    private void increment() {
         counter++;
         try {
             writer.write(Thread.currentThread().getName() + " value = " + counter + "\n");
